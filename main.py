@@ -3,12 +3,11 @@ import os
 import pickle
 from datetime import datetime
 
-from addressParser import AddressParser
-from dataParser import DataParser
-from exporter import Exporter
+from brightline.addressParser import AddressParser
+from brightline.dataParser import DataParser
+from brightline.exporter import Exporter
 
 
-# TODO Implement function to detect the latest dump and select it
 def get_latest_dump():
     path = os.getcwd() + '/resources/.data/*.container'
     dumps = glob.glob(path)

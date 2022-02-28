@@ -4,7 +4,6 @@ class GeoData:
 
     # Object will store the ID, Name, Neighborhood,
     # Calibrated PM2.5, and Humidity data
-    # TODO Implement storage of coordinates and address
     def __init__(self, id, name, hood):
         self.id = id
         self.name = name
