@@ -1,6 +1,6 @@
 # Parses CSV files provided by Brightline
-from geoContainer import GeoContainer
-from geodata import GeoData
+from brightline.geoContainer import GeoContainer
+from brightline.geoData import GeoData
 
 
 class DataParser:

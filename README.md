@@ -1,2 +1,2 @@
-# brightline_proj
+# brightline-proj
 Data analysis and visualization for Brightline Defense

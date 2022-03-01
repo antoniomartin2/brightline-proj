@@ -16,8 +16,11 @@ class Exporter:
         dict = self.geo.dict
         for id in dict.keys():
             if dict[id].coords:
-                point = Point(dict[id].coords)
-                feature = Feature(id=id, geometry=point)
+                props_dict = vars(dict[id])
+                props_dict.pop("pm_dict")
+                props_dict.pop("hum_dict")
+                point = Point((dict[id].coords[1], dict[id].coords[0]))
+                feature = Feature(geometry=point, properties=props_dict)
                 geolist.append(feature)
             else:
                 print('Error: No Coordinates/Address for ID {}'.format(id))

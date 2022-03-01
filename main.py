@@ -6,6 +6,7 @@ from datetime import datetime
 from brightline.addressParser import AddressParser
 from brightline.dataParser import DataParser
 from brightline.exporter import Exporter
+from brightline.geoContainer import GeoContainer
 
 
 def get_latest_dump():
@@ -26,9 +27,9 @@ def main():
         container = pickle.load(filehandler)
 
     else:
-        data_parser = DataParser(os.getcwd() + '/resources/airqualitydata082020_122021.csv')
+        data_parser = DataParser(os.getcwd() + '/resources/CleanData_UCBerkeley.csv')
         container = data_parser.read()
-        address_parser = AddressParser(os.getcwd() + '/resources/Brightline AQ Monitoring Network - Technical COPY - Network Information.csv')
+        address_parser = AddressParser(os.getcwd() + '/resources/InternalLocData.csv')
         addr_dict = address_parser.read()
         container.merge_dict(addr_dict)
         container.save()
