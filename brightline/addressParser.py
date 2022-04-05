@@ -39,6 +39,7 @@ class AddressParser:
                     if attempt < max:
                         time.sleep(1)
                         return get_address(address, attempt=attempt + 1)
+                    print(address)
                     raise
 
             loc = get_address(addr)
